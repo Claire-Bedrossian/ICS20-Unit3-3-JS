@@ -1,23 +1,31 @@
-// Copyright (c) 202X Claire Bedrossian All rights reserved
+// Copyright (c) 2022 Claire Bedrossian All rights reserved
 //
 // Created by: Claire Bedrossian
-// Created on: XXX 202X
+// Created on: Nov 2022
 // This file contains the JS functions for index.html
 
 "use strict"
 
 /**
- * Check servie worker.
+ * Check service worker.
  */
 if (navigator.serviceWorker) {
-  navigator.serviceWorker.register("/ICS2O-PWA-Test/sw.js", {
-    scope: "/ICS2O-PWA-Test/",
+  navigator.serviceWorker.register("/ICS2O-Unit3-03-JS/sw.js", {
+    scope: "/ICS2O-Unit3-03-JS/",
   })
 }
 
 /**
- * This function displays an alert.
+ * This function calculates the volume of a sphere
  */
 function myButtonClicked() {
-  document.getElementById("hello-world").innerHTML = "<p>Hello, World!</p>"
+  // input
+  const radius = parseFloat(document.getElementById("radius-number").value)
+
+  //process
+  const volume = (4 / 3) * Math.PI * radius ** 3
+
+  // output
+  document.getElementById("volume").innerHTML =
+    "Volume is equal to: " + volume + " cm³"
 }
